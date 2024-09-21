@@ -1,5 +1,4 @@
 # importing libraries
-
 import tensorflow
 from tensorflow.keras.preprocessing import image
 from tensorflow.keras.layers import GlobalMaxPooling2D
@@ -32,17 +31,23 @@ def extract_features(img_path, model):
 
     return normalized_result
 
+#list for file names
 file_names = []
 
+# storing file names in list
 for file in os.listdir('Dataset/images'):
     file_names.append(os.path.join('Dataset/images', file))
 
+# feature list
 feature_list = []
 
+# creating features for images
 for file in tqdm(file_names):
     feature_list.append(extract_features(file, model))
 
+# saving feature list and file names
 pickle.dump(feature_list, open('embeddings.pkl', 'wb'))
 pickle.dump(file_names, open('filenames.pkl', 'wb'))
 
+# saving model
 model.save('model.h5')
