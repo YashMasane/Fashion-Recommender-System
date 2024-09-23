@@ -2,6 +2,7 @@
 
 __pycache__/
 /Dataset/
+/uploads/
 *.py[cod]
 *$py.class
 
