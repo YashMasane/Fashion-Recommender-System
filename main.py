@@ -1,3 +1,4 @@
+
 # importing libraries
 import tensorflow
 from tensorflow.keras.preprocessing import image
@@ -7,6 +8,7 @@ import numpy as np
 from numpy.linalg import norm
 import os
 from tqdm import tqdm
+from sklearn.decomposition import PCA
 import pickle
 
 # resnet model
